@@ -3,118 +3,360 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stablecoin Swap</title>
-  <meta name="description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
+  <title>Stablecoin Swap - Stable-to-Stable DeFi</title>
+  <meta name="description" content="Stablecoin Swap helps you trade USDC, USDT and other stable assets from a non-custodial DeFi app. Compare live routes, costs and safety before you sign.">
+  <meta name="theme-color" content="#FBFAF7">
   <link rel="canonical" href="https://stablecoin-swap.github.io/">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#070A0D">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Stablecoin Swap">
-  <meta property="og:description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
-  <meta property="og:url" content="https://stablecoin-swap.github.io/">
-  <meta property="og:image" content="https://stablecoin-swap.github.io/favicon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Stablecoin Swap">
-  <meta name="twitter:description" content="Stablecoin Swap swaps between stablecoins from your own wallet; peg and depeg risk exists.">
+  <meta name="robots" content="index,follow">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://stablecoin-swap.github.io/#website",
-        "url": "https://stablecoin-swap.github.io/",
-        "name": "Stablecoin Swap",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://stablecoin-swap.github.io/#organization",
-        "name": "Stablecoin Swap",
-        "url": "https://stablecoin-swap.github.io/",
-        "logo": "https://stablecoin-swap.github.io/favicon.png"
-      },
-      {
-        "@type": "WebApplication",
-        "@id": "https://stablecoin-swap.github.io/#app",
-        "name": "Stablecoin Swap",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://stablecoin-swap.github.io/",
-        "isAccessibleForFree": true
-      }
-    ]
-  }
-  </script>
-
   <link rel="prefetch" href="dashboard/">
-  <link rel="prerender" href="dashboard/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stablecoin Swap - Stable-to-Stable DeFi">
+  <meta property="og:description" content="Swap stablecoins from a non-custodial DeFi app with live routes, wallet-native signing and clear cost review.">
+  <meta property="og:image" content="og-cover.png">
+  <meta property="og:url" content="https://stablecoin-swap.github.io/">
+  <style>
+  :root{
+    --bg:#FBFAF7; --panel:#FFFFFF; --field:#F6F5F1;
+    --ink:#15161C; --muted:#646A78; --faint:#9AA0AD;
+    --line:rgba(20,22,30,.09); --line-2:rgba(20,22,30,.05);
+    --accent:#26A17B; --accent-ink:#1C775B; --accent-soft:rgba(38,161,123,.1);
+    --pos:#26A17B;
+    --radius:22px; --radius-sm:14px;
+    --shadow-card:0 1px 0 rgba(20,22,30,.03), 0 34px 64px -30px rgba(20,22,60,.30), 0 10px 24px -18px rgba(20,22,60,.18);
+    --shadow-soft:0 1px 0 rgba(20,22,30,.02), 0 20px 44px -32px rgba(20,22,60,.24);
+    --ui:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0; overflow-x:hidden}
+  body{background:var(--bg); color:var(--ink); font-family:var(--body); line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; position:relative}
+  a{color:inherit; text-decoration:none}
+  a.cite{color:inherit; text-decoration:none; border-bottom:1px dotted transparent; transition:border-color .15s ease}
+  a.cite:hover{border-bottom-color:var(--faint)}
+  img{display:block; max-width:100%}
+  button{font:inherit; cursor:pointer; border:none; background:none; color:inherit}
+  h1,h2,h3,p{margin:0}
+
+  /* texture: fine grid + soft glow */
+  .bg{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
+  .bg .glow{position:absolute; inset:0; background:
+      radial-gradient(720px 480px at 50% -4%, rgba(38,161,123,.12), transparent 62%),
+      radial-gradient(620px 520px at 88% 14%, rgba(38,161,123,.06), transparent 60%);}
+  .bg .grid{position:absolute; inset:-2px;
+    background-image:linear-gradient(rgba(20,22,30,.038) 1px, transparent 1px), linear-gradient(90deg, rgba(20,22,30,.038) 1px, transparent 1px);
+    background-size:128px 128px;
+    -webkit-mask-image:radial-gradient(130% 80% at 50% 8%, #000 44%, transparent 88%);
+            mask-image:radial-gradient(130% 80% at 50% 8%, #000 44%, transparent 88%);}
+
+  .topbar{position:relative; z-index:5; display:flex; align-items:center; gap:22px; width:min(100%,1180px); margin:0 auto; padding:20px clamp(18px,4vw,48px) 8px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--ui); font-weight:600; font-size:1.05rem; letter-spacing:-.01em}
+  .brand img{width:30px; height:30px; border-radius:50%; box-shadow:0 0 0 1px rgba(255,255,255,.8), 0 8px 18px -12px rgba(38,161,123,.5)}
+  .spacer{flex:1}
+  .nav{display:flex; align-items:center; gap:clamp(16px,2.6vw,30px)}
+  .nav a{font-family:var(--ui); font-weight:500; font-size:.92rem; color:var(--muted); transition:color .16s ease}
+  .nav a:hover{color:var(--accent-ink)}
+
+  .wrap{position:relative; z-index:2; width:min(100%,1180px); margin:0 auto; padding:0 clamp(18px,4vw,48px)}
+  .sec{padding-top:clamp(50px,7vh,90px); padding-bottom:clamp(50px,7vh,90px)}
+  .sec-head{text-align:center; max-width:60ch; margin:0 auto clamp(28px,4vh,42px)}
+  .eyebrow{display:inline-flex; align-items:center; gap:9px; font-family:var(--ui); font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink)}
+  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft)}
+  .eyebrow svg{width:15px; height:15px}
+  .h2{margin-top:14px; font-family:var(--ui); font-weight:700; color:var(--ink); font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.04; letter-spacing:-.02em}
+  .sec-head p{margin-top:14px; color:var(--muted); font-size:clamp(1rem,1.3vw,1.12rem); line-height:1.6}
+
+  /* hero - CENTERED */
+  .hero{text-align:center; padding-top:clamp(26px,5vh,60px); padding-bottom:clamp(20px,3vh,40px)}
+  .hero .eyebrow{margin:0 auto}
+  .hero h1{margin:22px auto 0; font-family:var(--ui); font-weight:700; color:var(--ink); font-size:clamp(3rem,7vw,5.4rem); line-height:.97; letter-spacing:-.035em; max-width:15ch}
+  .deck{max-width:52ch; margin:20px auto 0; color:var(--muted); font-size:clamp(1.05rem,1.5vw,1.22rem); line-height:1.58}
+  .deck strong{color:var(--ink); font-weight:600; box-shadow:inset 0 -.36em 0 var(--accent-soft)}
+  .cta-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px; margin:28px 0 0}
+  .primary{display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:54px; padding:0 28px; border-radius:14px; background:var(--ink); color:#fff; font-family:var(--ui); font-weight:600; font-size:1.02rem; letter-spacing:-.01em; box-shadow:0 16px 30px -16px rgba(20,22,30,.7); transition:transform .18s ease, filter .18s ease}
+  .primary:hover{transform:translateY(-1px); filter:brightness(1.1)}
+  .primary svg{width:17px; height:17px}
+  .ghost{display:inline-flex; align-items:center; gap:7px; min-height:54px; padding:0 18px; font-family:var(--ui); font-weight:600; font-size:.98rem; color:var(--muted); transition:color .16s ease}
+  .ghost:hover{color:var(--accent-ink)}
+  .ghost svg{width:15px; height:15px}
+  .chips{list-style:none; margin:24px 0 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:9px}
+  .chips li{display:inline-flex; align-items:center; gap:7px; min-height:36px; padding:7px 14px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.7); font-family:var(--ui); font-weight:500; font-size:.86rem; color:var(--ink)}
+  .chips li::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--accent)}
+
+  /* swap card - CENTERED */
+  .card{width:min(100%,420px); margin:clamp(32px,5vh,48px) auto 0; padding:14px; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-card); position:relative; text-align:left}
+  .card::before{content:""; position:absolute; inset:0 0 auto; height:1px; border-radius:var(--radius) var(--radius) 0 0; background:linear-gradient(90deg, transparent, rgba(38,161,123,.4), transparent)}
+  .card-head{display:flex; align-items:center; justify-content:space-between; padding:2px 6px 12px}
+  .card-head .ct{font-family:var(--ui); font-weight:600; font-size:1.04rem}
+  .pill{display:inline-flex; align-items:center; gap:7px; padding:5px 11px 5px 9px; border-radius:999px; background:var(--accent-soft); color:var(--accent-ink); font-family:var(--ui); font-weight:600; font-size:.76rem}
+  .pill .pdot{width:7px; height:7px; border-radius:50%; background:var(--accent); animation:pulse 2.4s ease-out infinite}
+  .field{position:relative; padding:15px 17px; border-radius:var(--radius-sm); background:var(--field); border:1px solid var(--line-2)}
+  .field + .field{margin-top:6px}
+  .flabel{display:block; color:var(--muted); font-size:.82rem; font-weight:500; margin-bottom:12px}
+  .frow{display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .tokpill{display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 6px; border-radius:999px; background:var(--panel); border:1px solid var(--line); font-family:var(--ui); font-weight:600; font-size:.98rem; box-shadow:0 1px 0 rgba(20,22,30,.02)}
+  .tokpill img{width:24px; height:24px; border-radius:50%}
+  .tokpill .cv{color:var(--faint); font-size:.8em}
+  .ghostval{color:var(--faint); font-size:.9rem; font-weight:450; white-space:nowrap}
+  .route{position:relative; height:0}
+  .switch{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:40px; height:40px; border-radius:50%; z-index:3; background:var(--panel); border:4px solid var(--panel); box-shadow:0 0 0 1px var(--line), 0 8px 18px -10px rgba(20,22,60,.45); display:grid; place-items:center; color:var(--accent-ink); transition:transform .25s ease}
+  .switch svg{width:17px; height:17px}
+  .switch:hover{transform:translate(-50%,-50%) rotate(180deg)}
+  .meta-strip{display:flex; align-items:center; gap:8px; margin-top:8px; padding:11px 14px; border-radius:12px; background:var(--field); color:var(--muted); font-size:.82rem}
+  .meta-strip svg{width:15px; height:15px; color:var(--accent-ink); flex:none}
+  .cta{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:8px; min-height:52px; border-radius:14px; background:var(--ink); color:#fff; font-family:var(--ui); font-weight:600; font-size:1rem; box-shadow:0 14px 28px -16px rgba(20,22,30,.65); transition:transform .18s ease, filter .18s ease}
+  .cta:hover{transform:translateY(-1px); filter:brightness(1.1)}
+  .note{margin:11px 0 2px; text-align:center; color:var(--faint); font-size:.78rem}
+
+  /* how it works - horizontal connector */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative}
+  .steps::before{content:""; position:absolute; top:23px; left:15%; right:15%; height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent)}
+  .step{text-align:center; padding:0 8px}
+  .step .node{width:46px; height:46px; margin:0 auto; border-radius:50%; display:grid; place-items:center; background:var(--panel); border:1px solid var(--line); color:var(--accent-ink); font-family:var(--ui); font-weight:700; font-size:1rem; position:relative; z-index:1; box-shadow:0 0 0 5px var(--bg), var(--shadow-soft)}
+  .step h3{margin:16px 0 8px; font-family:var(--ui); font-weight:600; font-size:1.1rem; color:var(--ink); letter-spacing:-.01em}
+  .step p{color:var(--muted); font-size:.93rem; line-height:1.55; max-width:30ch; margin:0 auto}
+
+  /* benefits */
+  .benefits{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .ben{padding:24px 22px; background:var(--panel); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow-soft); text-align:center}
+  .ben .ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent-ink); margin:0 auto 14px}
+  .ben .ico svg{width:21px; height:21px}
+  .ben h3{font-family:var(--ui); font-weight:600; font-size:1.1rem; color:var(--ink); letter-spacing:-.01em}
+  .ben p{margin-top:8px; color:var(--muted); font-size:.94rem; line-height:1.55}
+
+  /* FAQ - single centered column */
+  .faq{max-width:760px; margin:0 auto}
+  .qa{padding:22px 4px; border-top:1px solid var(--line)}
+  .qa:first-child{border-top:none}
+  .qa h3{font-family:var(--ui); font-weight:600; font-size:1.12rem; color:var(--ink); letter-spacing:-.01em; display:flex; gap:12px}
+  .qa h3 .qn{color:var(--accent-ink); font-size:.9rem; font-weight:700; padding-top:3px}
+  .qa p{margin-top:10px; padding-left:30px; color:var(--muted); font-size:.97rem; line-height:1.65}
+  .qa a:not(.cite){color:var(--accent-ink); font-weight:600}
+
+  /* related */
+  .related{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .rel{display:flex; flex-direction:column; gap:7px; padding:22px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow-soft); transition:transform .16s ease, border-color .16s ease}
+  .rel:hover{transform:translateY(-2px); border-color:rgba(38,161,123,.35)}
+  .rel .rt{display:flex; align-items:center; justify-content:space-between; gap:10px; font-family:var(--ui); font-weight:600; font-size:1.05rem; color:var(--ink); letter-spacing:-.01em}
+  .rel .rt svg{width:16px; height:16px; color:var(--accent-ink); flex:none}
+  .rel p{color:var(--muted); font-size:.9rem; line-height:1.5}
+
+  .footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-top:8px}
+  .footer .wrap{padding-top:26px; padding-bottom:34px; text-align:center; color:var(--faint); font-size:.84rem}
+  .footer b{color:var(--muted); font-weight:600}
+
+  @keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent-soft)} 70%{box-shadow:0 0 0 8px rgba(38,161,123,0)} 100%{box-shadow:0 0 0 0 rgba(38,161,123,0)}}
+
+  @media (max-width:920px){
+    .nav{display:none}
+    .steps{grid-template-columns:1fr; gap:24px}
+    .steps::before{display:none}
+    .benefits,.related{grid-template-columns:1fr}
+  }
+  @media (max-width:430px){
+    .hero h1{font-size:clamp(2.6rem,13vw,3.6rem)}
+    .cta-row .primary,.cta-row .ghost{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important; transition-duration:.01ms!important}}
+  </style>
 </head>
 <body>
+  <div class="bg" aria-hidden="true"><div class="glow"></div><div class="grid"></div></div>
+
   <header class="topbar">
-    <a class="brand" href="#" aria-label="Stablecoin Swap home">
+    <a class="brand" href="./">
       <img src="favicon.png" width="30" height="30" alt="">
       <span>Stablecoin Swap</span>
     </a>
-    <nav class="nav" aria-label="Stablecoin references">
-      <a href="https://www.circle.com/usdc" target="_blank" rel="nofollow noopener noreferrer">Circle USDC</a>
-      <a href="https://ethereum.org/stablecoins/" target="_blank" rel="nofollow noopener noreferrer">Ethereum</a>
-      <a href="https://www.coingecko.com/en/categories/stablecoins" target="_blank" rel="nofollow noopener noreferrer">CoinGecko</a>
+    <span class="spacer"></span>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="how-it-works/">How it works</a>
+      <a href="faq/">FAQ</a>
+      <a href="about/">About</a>
+      <a href="security/">Security</a>
+      <a href="supported-chains/">Supported Chains</a>
     </nav>
-    <span class="spacer" aria-hidden="true"></span>
-    <a class="ghost" href="dashboard/" rel="noopener noreferrer">Open app</a>
   </header>
 
-  <main class="stage">
-    <section class="hero" aria-labelledby="page-title">
-      <h1 id="page-title">Stablecoin Swap</h1>
-      <p class="sub"><strong>Stablecoin Swap</strong> swaps between stablecoins from your own wallet; peg and depeg risk exists.</p>
+  <main>
+    <!-- HERO (centered) -->
+    <section class="wrap hero">
+      <span class="eyebrow"><span class="dot"></span>Stable-to-Stable DeFi Swap</span>
+      <h1>Stablecoin Swap</h1>
+      <p class="deck">Stablecoin Swap is a <a class="cite" href="https://stablecoin-swap.github.io/" rel="nofollow noopener noreferrer">wallet-native stable asset app</a> for trading <strong>USDC, USDT and other dollar-pegged tokens</strong> without handing custody to an exchange.</p>
+      <div class="cta-row">
+        <a class="primary" href="dashboard/">Open App
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="ghost" href="how-it-works/">How it works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="chips">
+        <li>Non-custodial</li>
+        <li>Stablecoin routes</li>
+        <li>Wallet-native</li>
+        <li>No sign-up</li>
+      </ul>
+
+      <section class="card" aria-label="Stablecoin swap preview">
+        <div class="card-head">
+          <span class="ct">Swap</span>
+          <span class="pill"><span class="pdot"></span>Preview</span>
+        </div>
+        <div class="field">
+          <span class="flabel">From</span>
+          <div class="frow">
+            <button class="tokpill" type="button"><img src="usdc.png" alt="USDC">USDC <span class="cv" aria-hidden="true">&#9662;</span></button>
+            <span class="ghostval">Amount in app</span>
+          </div>
+        </div>
+        <div class="route">
+          <button class="switch" type="button" data-switch aria-label="Switch direction">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div class="field">
+          <span class="flabel">To</span>
+          <div class="frow">
+            <button class="tokpill" type="button"><img src="usdt.png" alt="USDT">USDT <span class="cv" aria-hidden="true">&#9662;</span></button>
+            <span class="ghostval">Live quote in app</span>
+          </div>
+        </div>
+        <div class="meta-strip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3 3"/></svg>
+          Route, slippage settings and network costs are shown before you sign.
+        </div>
+        <a class="cta" href="dashboard/">Open App</a>
+        <p class="note">Preview only &middot; non-custodial &middot; connect your wallet in the app</p>
+      </section>
     </section>
 
-    <section class="swap-card" aria-label="Stablecoin swap preview">
-      <div class="route">
-        <div class="leg">
-          <span class="label">From</span>
-          <span class="chip">
-            <img class="token" src="usdc.png" width="30" height="30" alt="USDC">
-            <span class="ticker">USDC</span>
-          </span>
+    <!-- HOW IT WORKS (connector) -->
+    <section class="wrap sec" id="how">
+      <div class="sec-head">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>How it works</span>
+        <h2 class="h2">Stablecoin Swap in three steps</h2>
+        <p>Trade from one stable asset to another while the app keeps the important swap details in front of you: route, token, chain, time estimate, slippage settings and cost.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="node">1</div>
+          <h3>Connect your wallet</h3>
+          <p>Open the app and connect a self-custody wallet. You keep control of private keys and approve every action from your wallet.</p>
         </div>
-        <button class="switch" type="button" data-switch aria-label="Switch swap direction">
-          <span aria-hidden="true">-&gt;</span>
-        </button>
-        <div class="leg">
-          <span class="label">To</span>
-          <span class="chip">
-            <img class="token" src="usdt.png" width="30" height="30" alt="USDT">
-            <span class="ticker">USDT</span>
-          </span>
+        <div class="step">
+          <div class="node">2</div>
+          <h3>Pick stablecoins</h3>
+          <p>Select assets such as <a class="cite" href="https://www.circle.com/usdc" rel="nofollow noopener noreferrer">Circle USDC</a> and <a class="cite" href="https://tether.to/" rel="nofollow noopener noreferrer">Tether USDt</a>, then choose the chain where you want the swap to happen.</p>
+        </div>
+        <div class="step">
+          <div class="node">3</div>
+          <h3>Review and sign</h3>
+          <p>Compare the live quote, route and expected network cost. If the details fit, confirm the transaction from your wallet.</p>
         </div>
       </div>
-      <a class="enter" href="dashboard/" rel="noopener noreferrer">Enter App</a>
-      <p class="note">Preview only</p>
+    </section>
+
+    <section class="wrap sec" id="why">
+      <div class="sec-head">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Why swap here</span>
+        <h2 class="h2">Built for stablecoin execution</h2>
+        <p>A good stablecoin swap page should feel precise: the destination asset is clear, the quote is live, and the wallet approval is yours to control.</p>
+      </div>
+      <div class="benefits">
+        <div class="ben">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+          <h3>Self-custody first</h3>
+          <p>You do not deposit funds into a centralized account. The app prepares the swap, and your wallet signs the transaction.</p>
+        </div>
+        <div class="ben">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <h3>Stable asset coverage</h3>
+          <p>Swap supported stablecoins across compatible DeFi routes, including widely used <a class="cite" href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/" rel="nofollow noopener noreferrer">ERC-20 tokens</a>.</p>
+        </div>
+        <div class="ben">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9"/><path d="M3 12h6l2-3 2 6 2-3h2"/></svg></span>
+          <h3>Live route review</h3>
+          <p>Check the quote, route path, token approvals and network fees before you commit, with final details shown inside the app.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (single column) -->
+    <section class="wrap sec" id="faq">
+      <div class="sec-head">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01"/></svg>FAQ</span>
+        <h2 class="h2">Stablecoin Swap questions</h2>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3><span class="qn">01</span>What is Stablecoin Swap?</h3>
+          <p>Stablecoin Swap is a non-custodial DeFi app for trading stable assets such as USDC and USDT from a wallet-controlled flow. It focuses on stable-to-stable swaps, clear route review and wallet-native signing.</p>
+        </div>
+        <div class="qa">
+          <h3><span class="qn">02</span>How does a stablecoin swap work?</h3>
+          <p>You choose the stablecoin you want to sell, choose the stablecoin you want to receive, review the live quote and sign the transaction. The app shows the relevant route and costs before confirmation.</p>
+        </div>
+        <div class="qa">
+          <h3><span class="qn">03</span>Which assets and chains are supported?</h3>
+          <p>The app is designed for supported stablecoins and compatible networks, including routes on chains such as <a class="cite" href="https://base.org/" rel="nofollow noopener noreferrer">Base</a>, <a class="cite" href="https://arbitrum.io/" rel="nofollow noopener noreferrer">Arbitrum One</a> and <a class="cite" href="https://www.optimism.io/" rel="nofollow noopener noreferrer">OP Mainnet</a>. See the full list on the <a href="supported-chains/">supported chains</a> page.</p>
+        </div>
+        <div class="qa">
+          <h3><span class="qn">04</span>How long does a swap take?</h3>
+          <p>Timing depends on the selected chain, current network conditions and the route used. The app presents the live estimate before you sign, so you can decide whether to proceed.</p>
+        </div>
+        <div class="qa">
+          <h3><span class="qn">05</span>What does Stablecoin Swap cost?</h3>
+          <p>Costs depend on the route, liquidity, token approval state and network fees. The final quote and transaction cost are displayed in the app before wallet confirmation.</p>
+        </div>
+        <div class="qa">
+          <h3><span class="qn">06</span>Is Stablecoin Swap safe to use?</h3>
+          <p>The app is non-custodial, so you keep control of the wallet and must review every approval and swap before signing. Always verify token symbols, destination chain, quote details and wallet prompts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap sec" id="more">
+      <div class="sec-head">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Learn more</span>
+        <h2 class="h2">Explore Stablecoin Swap</h2>
+      </div>
+      <div class="related">
+        <a class="rel" href="how-it-works/"><span class="rt">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The full walkthrough of choosing stablecoins, reading the quote and signing from your wallet.</p></a>
+        <a class="rel" href="security/"><span class="rt">Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>How approvals, wallet prompts and non-custodial flow affect stablecoin swap safety.</p></a>
+        <a class="rel" href="supported-chains/"><span class="rt">Supported chains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The networks and stablecoin routes available inside the app.</p></a>
+      </div>
     </section>
   </main>
 
-  <footer class="foot">Stablecoin Swap &mdash; 2026</footer>
+  <footer class="footer">
+    <div class="wrap">
+      
+      <p style="margin-top:6px"><b>Stablecoin Swap</b></p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebSite","@id":"https://stablecoin-swap.github.io/#website","url":"https://stablecoin-swap.github.io/","name":"Stablecoin Swap"},
+    {"@type":"Organization","@id":"https://stablecoin-swap.github.io/#org","name":"Stablecoin Swap","url":"https://stablecoin-swap.github.io/","logo":"https://stablecoin-swap.github.io/favicon.png"},
+    {"@type":"WebApplication","@id":"https://stablecoin-swap.github.io/#app","name":"Stablecoin Swap","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://stablecoin-swap.github.io/","browserRequirements":"Requires a Web3 wallet","description":"Non-custodial DeFi app for swapping supported stablecoins from a wallet-native interface with live route and cost review."},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is Stablecoin Swap?","acceptedAnswer":{"@type":"Answer","text":"Stablecoin Swap is a non-custodial DeFi app for trading stable assets such as USDC and USDT from a wallet-controlled flow. It focuses on stable-to-stable swaps, clear route review and wallet-native signing."}},
+      {"@type":"Question","name":"How does a stablecoin swap work?","acceptedAnswer":{"@type":"Answer","text":"You choose the stablecoin you want to sell, choose the stablecoin you want to receive, review the live quote and sign the transaction. The app shows the relevant route and costs before confirmation."}},
+      {"@type":"Question","name":"Which assets and chains are supported?","acceptedAnswer":{"@type":"Answer","text":"The app is designed for supported stablecoins and compatible networks, including routes on chains such as Base, Arbitrum One and OP Mainnet. See the full list on the supported chains page."}},
+      {"@type":"Question","name":"How long does a swap take?","acceptedAnswer":{"@type":"Answer","text":"Timing depends on the selected chain, current network conditions and the route used. The app presents the live estimate before you sign, so you can decide whether to proceed."}},
+      {"@type":"Question","name":"What does Stablecoin Swap cost?","acceptedAnswer":{"@type":"Answer","text":"Costs depend on the route, liquidity, token approval state and network fees. The final quote and transaction cost are displayed in the app before wallet confirmation."}},
+      {"@type":"Question","name":"Is Stablecoin Swap safe to use?","acceptedAnswer":{"@type":"Answer","text":"The app is non-custodial, so you keep control of the wallet and must review every approval and swap before signing. Always verify token symbols, destination chain, quote details and wallet prompts."}}
+    ]}
+  ]}
+  </script>
 
   <script>
-  (function(){
-    "use strict";
-    var button = document.querySelector("[data-switch]");
-    if (!button) return;
-    button.addEventListener("click", function(){
-      var chips = document.querySelectorAll(".leg .chip");
-      if (chips.length < 2) return;
-      var first = chips[0].innerHTML;
-      chips[0].innerHTML = chips[1].innerHTML;
-      chips[1].innerHTML = first;
-    });
-  })();
+  (function(){"use strict";var b=document.querySelector("[data-switch]");if(!b)return;b.addEventListener("click",function(){var p=document.querySelectorAll(".card .tokpill");if(p.length<2)return;var t=p[0].innerHTML;p[0].innerHTML=p[1].innerHTML;p[1].innerHTML=t;});}());
   </script>
 </body>
 </html>
