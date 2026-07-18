@@ -1,0 +1,51 @@
+# Stablecoin swap
+> An independent informational dashboard covering non-custodial exchange routes between blockchain tokens designed to track stable reference assets.
+
+## What is Stablecoin swap
+A stablecoin swap exchanges one stablecoin for another, such as USDC for USDT or a dollar-pegged token for a euro-pegged token. It solves the need to change issuer, collateral model, currency exposure, network, or DeFi-compatible asset without first trading through a volatile cryptocurrency. Same-chain swaps are trades; cross-chain transfers additionally require a bridge, messaging protocol, or issuer-supported burn-and-mint system. This dashboard is informational and does not custody funds or execute transactions.
+
+## How it works
+The user selects the input token, output token, amount, and—when applicable—source and destination networks. A quote or aggregator evaluates liquidity pools and other available routes, estimating fees, price impact, and minimum output. For an ERC-20 token, the user may first authorize a specific contract allowance, then signs the swap transaction in a self-custodial wallet. Smart contracts transfer the input, execute the selected route, enforce the minimum output, and return the destination token to the specified wallet. Cross-chain routes add source-chain finality, bridge or burn-and-mint processing, and destination-chain settlement.
+
+## Key facts
+- Stablecoins may be fiat-backed, crypto-collateralized, commodity-backed, synthetic, or algorithmically stabilized.
+- Equal peg targets do not guarantee equal market prices, redemption rights, reserves, or risk.
+- Common EVM deployments use ERC-20 tokens and the allowance mechanism defined by EIP-20.
+- Representative EVM chain IDs include Ethereum 1, Optimism 10, Polygon 137, Base 8453, and Arbitrum One 42161.
+- Specialized StableSwap AMMs concentrate liquidity near parity; general AMMs and aggregators can also route stablecoin trades.
+- Non-custodial execution means the wallet owner retains private keys and approves every transaction.
+- Same-chain swaps normally settle in one confirmed transaction; cross-chain completion also depends on source finality and the transfer protocol.
+- Issuers may retain administrative controls, while protocols add smart-contract, oracle, liquidity, and governance risks.
+
+## Common questions
+- **Is a stablecoin swap safe?** No swap is risk-free. Verify token contracts, network, spender, route, minimum received, and protocol security before signing.
+- **Who holds the funds?** In a non-custodial swap, the user’s wallet controls the assets until authorized smart contracts execute the transaction.
+- **What fees apply?** Costs can include network gas, liquidity-provider fees, routing fees, bridge fees, and losses from price impact or depegging.
+- **How long does it take?** Same-chain settlement follows that network’s confirmation process; cross-chain routes require additional finality and delivery steps.
+- **Which assets and chains are supported?** Support depends on verified token deployments, available liquidity, wallet compatibility, and the selected protocol.
+- **How do I start?** Use a compatible self-custodial wallet, hold the input stablecoin and required gas token, compare quotes, and review every signature.
+- **What are the main risks?** Depegging, issuer or bridge failure, malicious tokens, unlimited approvals, contract exploits, MEV, low liquidity, and incorrect networks or addresses.
+
+## App
+- Dashboard: https://stablecoin-swap.github.io/
+- App: https://stablecoin-swap.github.io/dashboard/
+
+## Official resources
+Curve documentation: https://docs.curve.finance/
+Curve StableSwap whitepaper: https://docs.curve.finance/assets/pdf/whitepaper_stableswap.pdf
+Curve source code: https://github.com/curvefi
+Curve StableSwap-NG audit: https://docs.curve.finance/assets/pdf/audits/Curve%20Finance%20StableSwapNG%20Security%20Audit%20Report.pdf
+Uniswap swap documentation: https://developers.uniswap.org/docs/get-started/concepts/traders/swaps
+Uniswap interface: https://app.uniswap.org/
+Circle CCTP technical guide: https://developers.circle.com/cctp/references/technical-guide
+Circle USDC contract addresses: https://developers.circle.com/stablecoins/usdc-contract-addresses
+Ethereum ERC-20 standard: https://eips.ethereum.org/EIPS/eip-20
+
+## Data & references
+CoinGecko stablecoins: https://www.coingecko.com/en/categories/stablecoins
+DefiLlama stablecoins by chain: https://defillama.com/stablecoins/chains
+Etherscan explorer: https://etherscan.io/
+Etherscan token approvals: https://etherscan.io/tokenapprovalchecker
+Etherscan chain list: https://docs.etherscan.io/api-reference/endpoint/chainlist
+L2BEAT bridge methodology: https://forum.l2beat.com/t/assets-bridges-and-tvs/388
+Wikipedia stablecoin overview: https://en.wikipedia.org/wiki/Stablecoin
