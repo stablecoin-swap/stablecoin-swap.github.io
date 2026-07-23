@@ -1,0 +1,19 @@
+{
+  "name": "Stablecoin swap",
+  "short_name": "Stablecoin swap",
+  "description": "Stablecoin swap explained: how same-chain and cross-chain routes work, fee and gas structure, real risks, and how to verify contracts, spender, and minimum received before signing.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
