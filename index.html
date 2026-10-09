@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -108,7 +108,7 @@ h1 a{color:var(--accent)}
 .c57c462{position:relative;display:block;padding:1.25rem 3.5rem 1.25rem 1.4rem;cursor:pointer;list-style:none;color:var(--text);font:550 1.05rem/1.5 var(--display)}
 .c57c462::-webkit-details-marker{display:none}
 .c57c462::after{content:"+";position:absolute;right:1.4rem;top:1.25rem;color:var(--accent);font:400 1.4rem/1.1 var(--body)}
-.c0b7c5a[open]>.c57c462::after,.c0b7c5a details[open]>.c57c462::after{content:"в€’"}
+.c0b7c5a[open]>.c57c462::after,.c0b7c5a details[open]>.c57c462::after{content:"−"}
 .c0b7c5a[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
 .c57c462:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
 .ccdb72a{padding:0 1.4rem 1.4rem;color:var(--muted);font-size:.95rem;line-height:1.8;overflow-wrap:anywhere}
@@ -133,7 +133,7 @@ a.c7a79a0{display:block;color:var(--text)}
 <header class="c64581c">
 <nav class="cbc02d4" aria-label="Main navigation">
 <a class="c064d1c" href="#top"><span class="caba231" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>Swap guide</a>
-<div class="cb0735c"><a href="#key-facts">Key facts</a><a href="#sources">Sources</a><a class="cdff4ce" href="dashboard/">Open app <span aria-hidden="true">в†—</span></a></div>
+<div class="cb0735c"><a href="#key-facts">Key facts</a><a href="#sources">Sources</a><a class="cdff4ce" href="dashboard/">Open app <span aria-hidden="true">↗</span></a></div>
 </nav>
 </header>
 <div class="c64581c">
@@ -143,7 +143,7 @@ a.c7a79a0{display:block;color:var(--text)}
 <p class="cf42667">Plan your swap</p>
 <h1 id="hero-title">Stablecoin <em>Swap</em>.</h1>
 <p class="c25c572">A Stablecoin Swap exchanges one dollar-pegged token for another — USDC for USDT, USDT for DAI, or any combination — using pools built specifically for assets that are supposed to trade near the same price. Because both sides of the trade are meant to sit at one dollar, a well-run exchange clears with far less slippage than swapping into a volatile asset, even on a sizeable order. You pick the pair and amount, the route shows the quote and fee before you sign, and your tokens stay in your own wallet the entire time.</p>
-<a class="cb06919" href="dashboard/">Start a swap <span class="cbc9a38" aria-hidden="true">в†—</span></a>
+<a class="cb06919" href="dashboard/">Start a swap <span class="cbc9a38" aria-hidden="true">↗</span></a>
 <p class="cdb97fa">Compare the route. Estimate the rate.</p>
 </div>
 <aside class="c5252f7" aria-labelledby="estimator-title">
@@ -151,11 +151,11 @@ a.c7a79a0{display:block;color:var(--text)}
 <div class="c8d8763"><h2 id="estimator-title">Swap estimator</h2><span class="c919808">Live estimate</span></div>
 <label class="c82efb8" for="amount">You pay</label>
 <div class="ca90286"><input id="amount" type="number" inputmode="decimal" min="1" max="1000000000" step="0.01" value="1000" aria-describedby="amount-help amount-error"><span class="caeb466">units</span></div>
-<p class="c4ee112" id="amount-help">Enter 1вЂ“1,000,000,000 units, up to two decimal places.</p>
+<p class="c4ee112" id="amount-help">Enter 1–1,000,000,000 units, up to two decimal places.</p>
 <p class="cf44107" id="amount-error" aria-live="polite"></p>
 <div class="c1413f4" aria-label="Swap route">
 <div class="c5c3bb1"><span>From</span><div class="c5971d4"><img src="assets/tokens/usdc.svg" alt="USD Coin" width="28" height="28"></div></div>
-<span class="c7a87e9" aria-hidden="true">в†’</span>
+<span class="c7a87e9" aria-hidden="true">→</span>
 <div class="c5c3bb1"><span>To</span><div class="c5971d4"><img src="assets/tokens/usdt.svg" alt="Tether" width="28" height="28"></div></div>
 </div>
 <div class="c642a23" aria-live="polite" aria-atomic="true">
@@ -163,11 +163,11 @@ a.c7a79a0{display:block;color:var(--text)}
 <div class="cbf9065"><output id="received" for="amount">998.25</output><span class="caeb466">units</span></div>
 <dl class="c66d6d6">
 <div><dt>Estimated fee</dt><dd><output id="fee" for="amount">1.75</output> units</dd></div>
-<div><dt>Estimated time</dt><dd><output id="time" for="amount">5вЂ“7 min</output></dd></div>
+<div><dt>Estimated time</dt><dd><output id="time" for="amount">5–7 min</output></dd></div>
 </dl>
 </div>
-<a class="cb06919" href="dashboard/">Continue <span class="cbc9a38" aria-hidden="true">в†’</span></a>
-<p class="cd795aa">Fee = 0.15% of the amount + 0.25 units. Time starts at 2вЂ“4 minutes, adding one minute for every tenfold increase from 1 unit, rounded up.</p>
+<a class="cb06919" href="dashboard/">Continue <span class="cbc9a38" aria-hidden="true">→</span></a>
+<p class="cd795aa">Fee = 0.15% of the amount + 0.25 units. Time starts at 2–4 minutes, adding one minute for every tenfold increase from 1 unit, rounded up.</p>
 <noscript><p class="c4ee112">Enable JavaScript to update the estimate as you change the amount.</p></noscript>
 </div>
 </aside>
@@ -204,7 +204,7 @@ a.c7a79a0{display:block;color:var(--text)}
 <li><a class="c7a79a0" href="https://tether.to/" rel="nofollow noopener" target="_blank">Tether</a></li>
 <li><a class="c7a79a0" href="https://en.wikipedia.org/wiki/Stablecoin" rel="nofollow noopener" target="_blank">Wikipedia — Stablecoin</a></li></ul>
 </section>
-<footer class="c172944"><p>Updated Oct 09, 2026</p><a href="#top">Back to top <span aria-hidden="true">в†‘</span></a></footer>
+<footer class="c172944"><p>Updated Oct 09, 2026</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
 </div>
 <script>
 (() => {
@@ -220,9 +220,9 @@ a.c7a79a0{display:block;color:var(--text)}
     if (!Number.isFinite(value) || !amount.validity.valid) {
       amount.setAttribute('aria-invalid', 'true');
       error.textContent = 'Enter an amount from 1 to 1,000,000,000 with up to two decimal places.';
-      received.value = 'вЂ”';
-      fee.value = 'вЂ”';
-      time.value = 'вЂ”';
+      received.value = '—';
+      fee.value = '—';
+      time.value = '—';
       return;
     }
     amount.removeAttribute('aria-invalid');
@@ -232,7 +232,7 @@ a.c7a79a0{display:block;color:var(--text)}
     const minutes = 2 + Math.ceil(Math.log10(value));
     received.value = format.format((amountCents - feeCents) / 100);
     fee.value = format.format(feeCents / 100);
-    time.value = minutes + 'вЂ“' + (minutes + 2) + ' min';
+    time.value = minutes + '–' + (minutes + 2) + ' min';
   }
   amount.addEventListener('input', () => {
     clearTimeout(timer);
