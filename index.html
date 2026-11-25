@@ -1,249 +1,250 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stablecoin Swap — Exchange USDC, USDT & DAI at Low Slippage</title>
-<meta name="description" content="Run a Stablecoin Swap between USDC, USDT and DAI through stable-optimised pools with minimal slippage. See fees, peg and depeg risk, and how to keep self-custody.">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stablecoin Swap — Swap USDT, USDC and DAI on Ethereum</title>
+<meta name="description" content="Stablecoin Swap lets you trade USDT, USDC and DAI on Ethereum with low slippage through stable-to-stable pools. Non-custodial, from your own wallet, no account.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#f6f5f4">
 <link rel="canonical" href="https://stablecoin-swap.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Stablecoin Swap">
-<meta property="og:url" content="https://stablecoin-swap.github.io/">
-<meta property="og:image" content="https://stablecoin-swap.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Stablecoin Swap">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://stablecoin-swap.github.io/#website", "url": "https://stablecoin-swap.github.io/", "name": "Stablecoin Swap — Exchange USDC, USDT & DAI at Low Slippage"}, {"@type": "WebPage", "@id": "https://stablecoin-swap.github.io/#webpage", "url": "https://stablecoin-swap.github.io/", "name": "Stablecoin Swap — Exchange USDC, USDT & DAI at Low Slippage", "isPartOf": {"@id": "https://stablecoin-swap.github.io/#website"}, "description": "Run a Stablecoin Swap between USDC, USDT and DAI through stable-optimised pools with minimal slippage. See fees, peg and depeg risk, and how to keep self-custody.", "datePublished": "2026-11-05", "dateModified": "2026-11-05"}, {"@type": "SoftwareApplication", "name": "Stablecoin Swap", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stablecoin-swap.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Swaps"}, {"@type": "ListItem", "position": 3, "name": "Stablecoin Swap"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Stablecoin Swap?", "acceptedAnswer": {"@type": "Answer", "text": "A Stablecoin Swap is an exchange of one dollar-pegged token for another, such as USDC for USDT, carried out through a pool or venue built for assets expected to trade near one dollar."}}, {"@type": "Question", "name": "Why does this trade have lower slippage than other swaps?", "acceptedAnswer": {"@type": "Answer", "text": "Stable-optimised pools use a pricing curve that stays flat near the expected one-to-one rate, so a routine trade moves the price far less than it would in a pool built for two unrelated, volatile assets."}}, {"@type": "Question", "name": "What is depeg risk when converting stablecoins?", "acceptedAnswer": {"@type": "Answer", "text": "Depeg risk is the chance that one side of the pair trades away from one dollar, usually on doubts about reserves or collateral. Converting during a depeg can mean trading at a discount or premium rather than at a genuine dollar rate."}}, {"@type": "Question", "name": "Which stablecoins can I swap between?", "acceptedAnswer": {"@type": "Answer", "text": "USDC, USDT and DAI are the most common legs, alongside other dollar-pegged tokens that a given pool or exchange lists. Each is backed differently, so check which mechanism you are comfortable holding before and after the trade."}}, {"@type": "Question", "name": "Do I need an account to run a Stablecoin Swap?", "acceptedAnswer": {"@type": "Answer", "text": "Not on a decentralized venue. You connect a self-custody wallet, approve the token, and sign the transaction on-chain, with no sign-up and no custody handed to a third party."}}, {"@type": "Question", "name": "How much does converting stablecoins typically cost?", "acceptedAnswer": {"@type": "Answer", "text": "Fees on stable-optimised pools usually run a fraction of a percent, well below general-purpose pools, because the assets are expected to stay close to parity. Slippage stays low unless the order is large or a peg is under stress."}}, {"@type": "Question", "name": "Is DAI riskier to swap than USDC or USDT?", "acceptedAnswer": {"@type": "Answer", "text": "DAI carries different risk, not automatically more: it relies on over-collateralized crypto vaults rather than a bank-held reserve, trading issuer risk for smart-contract and collateral risk. Which is safer depends on which risk you trust less."}}]}]}</script>
+<meta property="og:type" content="website"><meta property="og:site_name" content="Stablecoin Swap"><meta property="og:title" content="Stablecoin Swap — Swap USDT, USDC and DAI on Ethereum"><meta property="og:description" content="Stablecoin Swap lets you trade USDT, USDC and DAI on Ethereum with low slippage through stable-to-stable pools. Non-custodial, from your own wallet, no account."><meta property="og:url" content="https://stablecoin-swap.github.io/"><meta property="og:image" content="https://stablecoin-swap.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Stablecoin Swap — Swap USDT, USDC and DAI on Ethereum"><meta name="twitter:description" content="Stablecoin Swap lets you trade USDT, USDC and DAI on Ethereum with low slippage through stable-to-stable pools. Non-custodial, from your own wallet, no account."><meta name="twitter:image" content="https://stablecoin-swap.github.io/og-image.png">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://stablecoin-swap.github.io/#organization","name":"Stablecoin Swap","url":"https://stablecoin-swap.github.io/","description":"Stablecoin Swap lets you trade USDT, USDC and DAI on Ethereum with low slippage through stable-to-stable pools. Non-custodial, from your own wallet, no account.","logo":{"@type":"ImageObject","@id":"https://stablecoin-swap.github.io/#logo","url":"https://stablecoin-swap.github.io/icon.svg","caption":"Stablecoin Swap"}},{"@type":"WebSite","@id":"https://stablecoin-swap.github.io/#website","url":"https://stablecoin-swap.github.io/","publisher":{"@id":"https://stablecoin-swap.github.io/#organization"},"name":"Stablecoin Swap"},{"@type":"WebPage","@id":"https://stablecoin-swap.github.io/#webpage","url":"https://stablecoin-swap.github.io/","publisher":{"@id":"https://stablecoin-swap.github.io/#organization"},"name":"Stablecoin Swap — Swap USDT, USDC and DAI on Ethereum","isPartOf":{"@id":"https://stablecoin-swap.github.io/#website"},"mainEntity":{"@id":"https://stablecoin-swap.github.io/#app"},"breadcrumb":{"@id":"https://stablecoin-swap.github.io/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://stablecoin-swap.github.io/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stablecoin-swap.github.io/"},{"@type":"ListItem","position":2,"name":"Stablecoin Swap","item":"https://stablecoin-swap.github.io/"}]},{"@type":"WebApplication","@id":"https://stablecoin-swap.github.io/#app","url":"https://stablecoin-swap.github.io/","publisher":{"@id":"https://stablecoin-swap.github.io/#organization"},"name":"Stablecoin Swap","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Stablecoin Swap lets you trade USDT, USDC and DAI on Ethereum with low slippage through stable-to-stable pools. Non-custodial, from your own wallet, no account.","isPartOf":{"@id":"https://stablecoin-swap.github.io/#website"}},{"@type":"FAQPage","@id":"https://stablecoin-swap.github.io/#faq","isPartOf":{"@id":"https://stablecoin-swap.github.io/#webpage"},"about":{"@id":"https://stablecoin-swap.github.io/#app"},"name":"Stablecoin Swap FAQ","mainEntity":[{"@type":"Question","name":"What is a stablecoin swap?","acceptedAnswer":{"@type":"Answer","text":"It is an exchange of one dollar-pegged token for another, such as USDT for USDC or DAI. The rate is usually close to 1:1, but it is still a market trade with fees and slippage."}},{"@type":"Question","name":"Why is slippage low between stablecoins?","acceptedAnswer":{"@type":"Answer","text":"Stable-to-stable pools use curves that stay flat around equal prices, so moderate trades barely move the rate. Very large trades or an imbalanced pool can still cause visible impact."}},{"@type":"Question","name":"Can a stablecoin lose its peg?","acceptedAnswer":{"@type":"Answer","text":"Yes. A stablecoin can fall below one dollar if confidence in its reserves, collateral or issuer weakens, and swapping into it during stress can lock in a loss. Check the quote rather than assuming 1:1."}},{"@type":"Question","name":"What is the difference between USDT, USDC and DAI?","acceptedAnswer":{"@type":"Answer","text":"USDT and USDC are issued by companies and backed by reserves, while DAI is created by a protocol against on-chain collateral. They differ in who can freeze them and in the type of risk they carry."}},{"@type":"Question","name":"Do I pay gas in a stablecoin?","acceptedAnswer":{"@type":"Answer","text":"No. Gas on Ethereum is paid in ETH, so keep a small ETH balance in the wallet. Without it you cannot approve or sign a swap."}},{"@type":"Question","name":"Do I need to approve my stablecoin first?","acceptedAnswer":{"@type":"Answer","text":"Yes. USDT, USDC and DAI are ERC-20 tokens, so the router needs a one-time allowance to move them. The approval is a separate transaction that costs gas."}}]}]}
+</script>
 <style>
-:root{--bg:#F9FBFA;--surface:#FFFFFF;--text:#0E1A16;--muted:#536860;--accent:#0D9488;--accent-ink:#FFFFFF;--radius:18px;--display:"Outfit";--body:"Inter"}
+@font-face{font-family:'Inter';src:url('assets/inter.woff2') format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Space Grotesk';src:url('assets/space-grotesk.woff2') format('woff2');font-weight:500 700;font-display:swap}
+:root{
+ --bg:#f6f5f4;--card:#fff;--ink:#17181c;--muted:#737b88;--faint:#aeb4bf;
+ --line:#ecebe9;--line-2:#e3e1de;--panel:#f8f7f6;--panel-2:#efedeb;
+ --accent:#2775ca;--accent-hover:#2267b2;--accent-ink:#1d5898;--accent-soft:#e1ecf8;--accent-on:#ffffff;--promo:#e9f1fa;--text-2:#4b5563;
+ --shadow:0 1px 2px rgba(13,17,28,.04),0 24px 56px -40px rgba(13,17,28,.24);--pico-bg:#fff;--pico-ring:rgba(13,17,28,.06);
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --head:"Space Grotesk","Arial",sans-serif;--body:"Inter","Arial",sans-serif;color-scheme:light}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:2rem}
-body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-underline-offset:.22em}
-a:hover{text-decoration-thickness:2px}
-button,input,select,textarea{font:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-::selection{background:var(--accent);color:var(--accent-ink)}
-.c64581c{width:min(1180px,calc(100% - 64px));margin-inline:auto}
-.c31b012{position:absolute;top:1rem;left:1rem;z-index:5;padding:.6rem 1rem;background:var(--surface);border-radius:var(--radius);transform:translateY(-200%)}
-.c31b012:focus{transform:translateY(0)}
-.cbc02d4{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:96px;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-.c064d1c{display:inline-flex;align-items:center;gap:.7rem;color:var(--text);font:650 1.1rem/1.2 var(--display);text-decoration:none}
-.caba231{display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--radius) * .6)}
-.caba231 svg{width:22px;height:22px;fill:none;stroke:var(--accent-ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cb0735c{display:flex;align-items:center;gap:1.7rem}
-.cb0735c>a:not(.cdff4ce){color:var(--muted);font-size:.9rem;text-decoration:none}
-.cb0735c>a:hover{color:var(--text)}
-.cdff4ce{padding:.6rem 1rem;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 7%,var(--surface));font-size:.9rem;font-weight:650;text-decoration:none}
-.cb2695c{padding-top:1.8rem;font-size:.82rem;color:var(--muted)}
-.cedcd69{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0;padding:0;list-style:none;color:var(--muted);font-size:.82rem}
-.cedcd69 ol,.cedcd69 ul{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0;padding:0;list-style:none}
-.cedcd69 a{color:var(--muted)}
-.cedcd69 [aria-current]{color:var(--text)}
-.c7f9f57{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:start;gap:clamp(1.75rem,5vw,4rem);padding:2.25rem 0 3.5rem}
-.c0f0e25{min-width:0}
-.cf42667{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.4rem;color:var(--muted);font-size:.88rem}
-.cf42667::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent)}
-h1{margin:0;font:550 clamp(2.6rem,4.9vw,4.65rem)/1.07 var(--display);letter-spacing:-.055em;overflow-wrap:anywhere;text-wrap:balance}
-h1 a{color:var(--accent)}
-.c25c572{max-width:48ch;margin:1.6rem 0 2rem;color:var(--muted);font-size:1.07rem;line-height:1.8}
-.cb06919{display:inline-flex;justify-content:center;align-items:center;gap:1.6rem;min-height:54px;padding:.9rem 1.4rem;border:1px solid color-mix(in srgb,var(--accent) 70%,var(--text));border-radius:var(--radius);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 88%,var(--text)));color:var(--accent-ink);font-weight:650;text-decoration:none;box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 20%,transparent);transition:transform .2s ease,box-shadow .2s ease}
-.cb06919:hover{transform:translateY(-2px);box-shadow:0 12px 28px color-mix(in srgb,var(--accent) 28%,transparent)}
-.cbc9a38{font-size:1.25rem;line-height:1}
-.cdb97fa{margin:1rem 0 0;color:var(--muted);font-size:.8rem}
-.c5252f7{position:relative;min-width:0;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 15%,transparent);border-radius:calc(var(--radius) + 12px);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 14%,var(--bg)),color-mix(in srgb,var(--accent) 3%,var(--bg)));box-shadow:0 30px 70px -25px color-mix(in srgb,var(--text) 20%,transparent)}
-.c7b4272{padding:clamp(1.25rem,3vw,2rem);border:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-radius:var(--radius);background:var(--surface);box-shadow:0 4px 14px color-mix(in srgb,var(--text) 4%,transparent)}
-.c8d8763{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.65rem}
-.c8d8763 h2{margin:0;font:600 1.2rem/1.3 var(--display);letter-spacing:-.025em}
-.c919808{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 9%,transparent);color:var(--accent);font-size:.72rem;white-space:nowrap}
-.c919808::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-.c82efb8{display:block;margin-bottom:.5rem;font-size:.83rem;font-weight:600}
-.ca90286{display:flex;align-items:center;gap:.5rem;padding:.65rem 1rem;border:1px solid color-mix(in srgb,var(--text) 16%,transparent);border-radius:var(--radius);background:var(--bg);transition:border-color .2s ease}
-.ca90286:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-.ca90286 input{width:100%;min-width:0;padding:.25rem 0;border:0;background:var(--bg);color:var(--text);font:550 2rem/1.3 var(--display);font-variant-numeric:tabular-nums}
-.ca90286 input:focus-visible{outline-offset:2px}
-.caeb466{color:var(--muted);font-size:.8rem}
-.c4ee112{margin:.5rem 0 1.3rem;color:var(--muted);font-size:.74rem}
-.c1413f4{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);align-items:center;gap:.6rem;padding:1.1rem 0;border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-.c5c3bb1{display:flex;flex-direction:column;align-items:center;gap:.45rem;min-width:0;color:var(--muted);font-size:.75rem}
-.c5971d4{display:flex;align-items:center;justify-content:center;min-height:52px;max-width:100%;overflow-wrap:anywhere;color:var(--text);font-weight:600}
-.c5971d4 img,.c5971d4 svg{display:block;max-width:100%;width:auto;height:44px;object-fit:contain}
-.c7a87e9{display:grid;place-items:center;width:32px;height:32px;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:50%;background:color-mix(in srgb,var(--accent) 7%,var(--surface));color:var(--accent)}
-.c642a23{padding:1.4rem 0 .25rem}
-.cec3796{margin:0;color:var(--muted);font-size:.8rem}
-.cbf9065{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin:.3rem 0 1rem}
-.cbf9065 output{font:550 clamp(1.65rem,3vw,2.5rem)/1.2 var(--display);letter-spacing:-.045em;color:var(--text);overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.c66d6d6{display:grid;gap:.45rem;margin:0 0 1.2rem;font-size:.8rem}
-.c66d6d6>div{display:flex;justify-content:space-between;gap:1rem}
-.c66d6d6 dt{color:var(--muted)}
-.c66d6d6 dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
-.c7b4272 .cb06919{width:100%;justify-content:space-between;min-height:50px;font-size:.9rem}
-.cd795aa{margin:1rem 0 0;color:var(--muted);font-size:.73rem;line-height:1.65}
-.cf44107{margin:.6rem 0 0;color:var(--text);font-size:.8rem;font-weight:600}
-.cf44107:empty{display:none}
-.c866191{padding:2.1rem 2.3rem;margin-bottom:4.5rem;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius);background:linear-gradient(115deg,var(--surface),color-mix(in srgb,var(--accent) 4%,var(--surface)))}
-.c2596b3{margin:0 0 1.3rem;font:550 1.5rem/1.3 var(--display);letter-spacing:-.035em}
-.ce15af9{width:100%;border-collapse:collapse;text-align:left;font-size:.92rem}
-.ce15af9 caption{text-align:left;padding:0 0 1rem;color:var(--muted)}
-.ce15af9 th,.ce15af9 td{padding:1rem .9rem;border-bottom:1px solid color-mix(in srgb,var(--text) 9%,transparent);vertical-align:top;overflow-wrap:anywhere}
-.ce15af9 th{font-weight:600;color:var(--text)}
-.ce15af9 td{color:var(--muted)}
-.ce15af9 th:first-child,.ce15af9 td:first-child{padding-left:0}
-.ce15af9 tr:last-child>*{border-bottom:0}
-.ce15af9 thead th{font-size:.82rem;color:var(--muted)}
-.c21154c{max-width:820px;margin-inline:auto}
-.c56c75f{padding:0 0 2.6rem;margin:0 0 2.6rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent);scroll-margin-top:2rem}
-.c5d8676{margin:0 0 1.1rem;font:550 clamp(1.7rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.04em;text-wrap:balance;overflow-wrap:anywhere}
-.c0f4d18{color:var(--muted);font:400 1rem/1.85 var(--body);overflow-wrap:anywhere}
-.c0f4d18 p{margin:0 0 1.15rem}
-.c0f4d18 h3,.c0f4d18 h4{margin:1.6rem 0 .65rem;color:var(--text);font:600 1.25rem/1.4 var(--display)}
-.c0f4d18 strong{color:var(--text);font-weight:600}
-.c0f4d18 ul,.c0f4d18 ol{padding-left:1.4rem}
-.c0f4d18 li{padding-left:.3rem;margin:.5rem 0}
-.c0f4d18 li::marker{color:var(--accent)}
-.c0f4d18 blockquote{margin:1.5rem 0;padding:1rem 1.4rem;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));color:var(--text)}
-.c0f4d18 img{max-width:100%;height:auto;border-radius:var(--radius)}
-.c0f4d18>:last-child{margin-bottom:0}
-.c0b7c5a{margin:.8rem 0;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-.c57c462{position:relative;display:block;padding:1.25rem 3.5rem 1.25rem 1.4rem;cursor:pointer;list-style:none;color:var(--text);font:550 1.05rem/1.5 var(--display)}
-.c57c462::-webkit-details-marker{display:none}
-.c57c462::after{content:"+";position:absolute;right:1.4rem;top:1.25rem;color:var(--accent);font:400 1.4rem/1.1 var(--body)}
-.c0b7c5a[open]>.c57c462::after,.c0b7c5a details[open]>.c57c462::after{content:"−"}
-.c0b7c5a[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-.c57c462:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
-.ccdb72a{padding:0 1.4rem 1.4rem;color:var(--muted);font-size:.95rem;line-height:1.8;overflow-wrap:anywhere}
-.ccdb72a>:first-child{margin-top:0}
-.ccdb72a>:last-child{margin-bottom:0}
-.cc855b1{max-width:820px;margin:3.5rem auto 0;padding-top:2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-.cdb3bf3{display:grid;gap:.7rem;margin:0;padding:0;list-style:none}
-.c7a79a0{padding:.85rem 1rem;border:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-radius:var(--radius);background:var(--surface);color:var(--muted);font-size:.86rem;overflow-wrap:anywhere}
-.c7a79a0 a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent)}
-a.c7a79a0{display:block;color:var(--text)}
-.c172944{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:4rem;padding:1.75rem 0 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--muted);font-size:.8rem}
-.c172944 p{margin:0}
-.c172944 a{color:var(--muted)}
-@media(min-width:1500px){.c7f9f57{padding-top:2.75rem;padding-bottom:4rem}}
-@media(max-width:850px){.c7f9f57{grid-template-columns:1fr;gap:2.5rem;padding-top:2.5rem;padding-bottom:3rem}.c0f0e25{max-width:640px}.c5252f7{width:100%;max-width:560px;justify-self:center}h1{font-size:clamp(2.5rem,7vw,4rem)}.c25c572{max-width:58ch}.c866191{margin-bottom:3rem}.cb0735c{gap:1rem}}
-@media(max-width:540px){.c64581c{width:calc(100% - 32px)}.cbc02d4{min-height:78px;gap:.75rem}.c064d1c{font-size:.95rem;gap:.5rem}.caba231{width:30px;height:30px}.cb0735c>a:not(.cdff4ce){display:none}.cdff4ce{padding:.5rem .75rem;font-size:.8rem}.cb2695c{padding-top:1.25rem}.c7f9f57{padding-top:2rem;gap:2rem}h1{font-size:2.65rem}.c25c572{font-size:1rem}.c0f0e25>.cb06919{width:100%}.cdb97fa{text-align:center}.c5252f7{padding:8px;border-radius:calc(var(--radius) + 8px)}.c7b4272{padding:1.2rem}.c866191{padding:1.4rem 1.1rem}.ce15af9{display:block;overflow-x:auto}.ce15af9 th,.ce15af9 td{min-width:125px;padding:.8rem .65rem}.c57c462{padding-left:1rem}.ccdb72a{padding-left:1rem;padding-right:1rem}.c172944{align-items:flex-start;flex-direction:column;margin-top:3rem}.c56c75f{margin-bottom:2rem;padding-bottom:2rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.cb06919:hover{transform:none}}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--ink);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:none;-webkit-mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%);mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%)}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;background:none;border:0;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:500;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+.nav{display:flex;align-items:center;gap:24px;padding:16px 24px;max-width:1280px;margin:0 auto;width:100%}
+.brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:500;font-size:20px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+.brand img{width:28px;height:28px}
+.nlinks{display:flex;align-items:center;gap:20px}
+.nlinks a{font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .16s var(--ease)}
+.nlinks a:hover{color:var(--ink)}
+.spacer{flex:1}
+main{flex:1}
+.chain{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:10px;background:var(--panel-2);font-weight:500;font-size:14px;color:var(--ink);transition:background-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.chain img{width:20px;height:20px;border-radius:50%}
+.chain:hover{background:var(--line-2)}
+.chain .cv{width:12px;height:12px;color:var(--muted)}
+.connect{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:10px;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-weight:500;font-size:14px;transition:background-color .16s var(--ease),border-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.connect:hover{border-color:var(--faint);background:var(--panel)}
+
+.hero{display:flex;flex-direction:column;align-items:center;padding:32px 20px 48px}
+h1{font-size:clamp(36px,4.6vw,48px);line-height:1.08;letter-spacing:-.025em;text-align:center;color:var(--ink);margin:0 0 32px}
+
+.card{width:min(600px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.tabs{display:flex;align-items:center;gap:4px;padding:20px 20px 16px}
+.tab{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:10px;font-weight:500;font-size:14px;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tab:hover{background:var(--panel-2);color:var(--ink)}
+.tab.on{background:var(--accent-soft);color:var(--accent-ink)}
+.tabs .sp{flex:1}
+.tabs .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tabs .ic:hover{background:var(--panel-2);color:var(--ink)}
+.tabs .ic svg{width:18px;height:18px}
+
+.promo{margin:0 20px;padding:32px;border-radius:12px;background:var(--promo);display:flex;align-items:center;gap:20px}
+.promo-txt{flex:1;min-width:0}
+.promo-h{font-family:var(--head);font-weight:500;font-size:clamp(22px,3.4vw,28px);line-height:1.2;letter-spacing:-.015em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.promo-sub{font-size:15px;line-height:1.6;color:var(--text-2);margin:0;max-width:34ch}
+.promo-grid{flex:0 0 auto;display:grid;grid-template-columns:repeat(2,auto);gap:16px}
+.pico{width:52px;height:52px;border-radius:50%;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);display:grid;place-items:center;overflow:hidden}
+.pico img{width:100%;height:100%;object-fit:contain;display:block}
+.promo-flow{flex-direction:column;align-items:stretch;gap:24px}
+.promo-flow .promo-sub{max-width:44ch}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.flow li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.flow li+li::before{content:"";position:absolute;top:22px;right:calc(50% + 30px);width:calc(100% - 52px);height:1px;background:var(--line-2)}
+.fi{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);color:var(--accent-ink)}
+.fi img{width:100%;height:100%;display:block}
+.fi svg{width:20px;height:20px}
+.fi.on{background:var(--accent);color:var(--accent-on);box-shadow:none}
+.flow b{margin-top:4px;font-weight:500;font-size:14px;color:var(--ink)}
+.flow small{font-size:13px;line-height:1.4;color:var(--muted)}
+.cta-wrap{padding:20px}
+.cta{width:100%;height:60px;border-radius:12px;background:var(--accent);color:var(--accent-on);font-weight:500;font-size:16px;transition:background-color .16s var(--ease),transform .12s var(--ease)}
+.cta:hover{background:var(--accent-hover)}
+.cta:active{transform:scale(.99)}
+@media(max-width:470px){.promo{flex-direction:column;align-items:flex-start}.promo-grid{grid-template-columns:repeat(4,auto)}.promo-sub{max-width:none}}
+
+.learn{max-width:720px;margin:48px auto 0;width:100%;padding:0 24px 72px}
+.learn-h{font-size:14px;font-weight:500;color:var(--muted);text-align:center;margin:0 0 12px}
+.lrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start}
+.lcard{flex:0 0 auto;background:transparent;border:1px solid var(--line-2);border-radius:10px;transition:background-color .16s var(--ease),border-color .16s var(--ease)}
+.lcard>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;font-weight:500;font-size:14px;color:var(--text-2)}
+.lcard>summary::-webkit-details-marker{display:none}
+.lcard:hover{border-color:var(--faint);background:var(--card)}.lcard:hover>summary{color:var(--ink)}
+.lcard .chev{width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);margin-top:-4px;flex-shrink:0;transition:transform .16s var(--ease)}
+.lcard[open]{order:9;flex:0 0 100%;min-width:0;background:var(--card);border-color:var(--line-2);border-radius:16px;margin-top:8px}
+.lcard[open]>summary{height:auto;padding:20px 24px 0;color:var(--muted);font-size:13px}
+.lcard[open] .chev{transform:rotate(225deg);margin-top:4px}
+.lbody{padding:4px 24px 24px;max-width:660px}
+.lbody h2{font-size:22px;line-height:1.3;color:var(--ink);margin:8px 0 4px}
+.lbody h3{font-size:15px;line-height:1.4;color:var(--ink);margin:20px 0 4px}
+.lbody p{margin:0;font-size:15px;line-height:1.7;color:var(--text-2)}
+.lbody p+p{margin-top:8px}
+.lbody ul,.lbody ol{margin:8px 0 0;padding-left:20px}
+.lbody li{font-size:15px;line-height:1.7;color:var(--text-2);margin-bottom:4px}
+.lbody a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.lbody strong,.lbody b{color:var(--ink);font-weight:500}
+.lbody .tbl{overflow-x:auto;margin:16px 0 4px}
+.lbody table{width:100%;min-width:420px;border-collapse:collapse;font-size:14px}
+.lbody caption{text-align:left;color:var(--muted);font-size:13px;margin-bottom:8px}
+.lbody th,.lbody td{text-align:left;padding:8px 12px;border:1px solid var(--line-2);vertical-align:top;line-height:1.45}
+.lbody thead th{background:var(--panel);color:var(--ink);font-weight:500}
+.lbody tbody th{background:var(--panel);color:var(--muted);white-space:nowrap;font-weight:500}
+.lbody td{color:var(--text-2)}
+.lfaq h3{margin-top:16px;font-size:16px}
+
+footer{border-top:1px solid var(--line-2);background:var(--card)}
+.foot{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:20px 24px 24px;color:var(--muted);font-size:13px}
+.foot a{color:var(--muted);transition:color .16s var(--ease)}.foot a:hover{color:var(--ink)}.foot .sep{color:var(--faint)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,8px);background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 16px 40px -16px rgba(13,17,28,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+@media(max-width:1120px){.nlinks{display:none}}
+@media(max-width:720px){.chain span{display:none}.chain{padding:0 8px;gap:4px}}
+@media(max-width:560px){
+  .nav{padding:12px 16px;gap:8px}
+  .brand{font-size:16px}
+  .brand img{width:24px;height:24px}
+  .chain{height:36px;padding:0 8px;gap:4px}
+  .chain span{display:none}
+  .connect{height:36px;padding:0 12px;font-size:13px}
+  .hero{padding:24px 16px 40px}
+  .tabs{padding:16px 16px 12px}.promo{margin:0 16px;padding:24px}.cta-wrap{padding:16px}.cta{height:56px}
+  .learn{margin-top:40px;padding:0 16px 56px}
+}
 </style>
+<link rel="prerender" href="/dashboard/">
+<link rel="prefetch" href="/dashboard/" as="document">
+<link rel="preload" href="/dashboard/" as="document">
 </head>
-<body id="top">
-<a class="c31b012" href="#content">Skip to content</a>
-<header class="c64581c">
-<nav class="cbc02d4" aria-label="Main navigation">
-<a class="c064d1c" href="#top"><span class="caba231" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>Swap guide</a>
-<div class="cb0735c"><a href="#key-facts">Key facts</a><a href="#sources">Sources</a><a class="cdff4ce" href="dashboard/">Swap <span aria-hidden="true">↗</span></a></div>
-</nav>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-cv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 5 5 5-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="5" ry="2.5"/><path d="M4 7v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V7"/><path d="M10 15.5c.6 1.2 2.6 2 5 2 2.8 0 5-1.1 5-2.5v-4c0-1.4-2.2-2.5-5-2.5"/><path d="M20 15v4c0 1.4-2.2 2.5-5 2.5s-5-1.1-5-2.5v-2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s-6 6.4-6 10.5a6 6 0 0 0 12 0c0-4.1-6-10.5-6-10.5z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.4 2.6c-.6.3-1.2.6-1.7 1l-2.3-1-2 3.4L4.6 11a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.3-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.3 1 2-3.4z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Stablecoin Swap home"><img src="icon.svg" alt=""><span>Stablecoin Swap</span></a>
+  <nav class="nlinks" aria-label="Primary">
+    <a href="#overview">What is it</a>
+    <a href="#compare">USDT, USDC, DAI</a>
+    <a href="#how">How to swap</a>
+    <a href="#fees">Fees &amp; slippage</a>
+    <a href="#security">Security</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <span class="spacer"></span>
+  <a class="chain" href="/dashboard/" style="text-decoration:none"><img src="assets/coin-usdc.svg" alt=""><span>Ethereum</span><svg class="cv" aria-hidden="true"><use href="#i-cv"/></svg></a>
+  <a class="connect" href="/dashboard/" style="text-decoration:none">Connect wallet</a>
 </header>
-<div class="c64581c">
-<div class="cb2695c"><nav class="cedcd69" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Swaps</span> <span>/</span> <span>Stablecoin Swap</span></nav></div>
-<section class="c7f9f57" aria-labelledby="hero-title">
-<div class="c0f0e25">
-<p class="cf42667">Plan your swap</p>
-<h1 id="hero-title">Stablecoin <em>Swap</em>.</h1>
-<p class="c25c572">A Stablecoin Swap exchanges one dollar-pegged token for another — USDC for USDT, USDT for DAI, or any combination — using pools built specifically for assets that are supposed to trade near the same price. Because both sides of the trade are meant to sit at one dollar, a well-run exchange clears with far less slippage than swapping into a volatile asset, even on a sizeable order. You pick the pair and amount, the route shows the quote and fee before you sign, and your tokens stay in your own wallet the entire time.</p>
-<a class="cb06919" href="dashboard/">Swap <span class="cbc9a38" aria-hidden="true">↗</span></a>
-<p class="cdb97fa">Compare the route. Estimate the rate.</p>
-</div>
-<aside class="c5252f7" aria-labelledby="estimator-title">
-<div class="c7b4272">
-<div class="c8d8763"><h2 id="estimator-title">Swap estimator</h2><span class="c919808">Live estimate</span></div>
-<label class="c82efb8" for="amount">You pay</label>
-<div class="ca90286"><input id="amount" type="number" inputmode="decimal" min="1" max="1000000000" step="0.01" value="1000" aria-describedby="amount-help amount-error"><span class="caeb466">units</span></div>
-<p class="c4ee112" id="amount-help">Enter 1–1,000,000,000 units, up to two decimal places.</p>
-<p class="cf44107" id="amount-error" aria-live="polite"></p>
-<div class="c1413f4" aria-label="Swap route">
-<div class="c5c3bb1"><span>From</span><div class="c5971d4"><img src="assets/tokens/usdc.svg" alt="USD Coin" width="28" height="28"></div></div>
-<span class="c7a87e9" aria-hidden="true">→</span>
-<div class="c5c3bb1"><span>To</span><div class="c5971d4"><img src="assets/tokens/usdt.svg" alt="Tether" width="28" height="28"></div></div>
-</div>
-<div class="c642a23" aria-live="polite" aria-atomic="true">
-<p class="cec3796">Estimated amount received</p>
-<div class="cbf9065"><output id="received" for="amount">998.25</output><span class="caeb466">units</span></div>
-<dl class="c66d6d6">
-<div><dt>Estimated fee</dt><dd><output id="fee" for="amount">1.75</output> units</dd></div>
-<div><dt>Estimated time</dt><dd><output id="time" for="amount">5–7 min</output></dd></div>
-</dl>
-</div>
-<a class="cb06919" href="dashboard/">Swap <span class="cbc9a38" aria-hidden="true">→</span></a>
-<p class="cd795aa">Fee = 0.15% of the amount + 0.25 units. Time starts at 2–4 minutes, adding one minute for every tenfold increase from 1 unit, rounded up.</p>
-<noscript><p class="c4ee112">Enable JavaScript to update the estimate as you change the amount.</p></noscript>
-</div>
-</aside>
-</section>
-<section class="c866191" id="key-facts" aria-labelledby="facts-title">
-<h2 class="c2596b3" id="facts-title">Key facts</h2>
-<table class="ce15af9"><tbody><tr><th scope="row">Typical pair</th><td>USDC, USDT, DAI and other dollar-pegged tokens</td></tr>
-<tr><th scope="row">Target price</th><td>$1.00 per token, by design</td></tr>
-<tr><th scope="row">Typical slippage</th><td>Well under 0.1% on deep stable pools</td></tr>
-<tr><th scope="row">Best venues</th><td>Stable-optimised AMMs such as Curve, plus major exchanges</td></tr>
-<tr><th scope="row">Main risk</th><td>Depeg — a token trading away from $1.00</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — your wallet holds the tokens throughout</td></tr></tbody></table>
-</section>
-<main class="c21154c" id="content">
-<section class="c56c75f"><h2 class="c5d8676">What a Stablecoin Swap Is</h2><div class="c0f4d18"><strong>A Stablecoin Swap is an exchange of one dollar-pegged token for another, carried out through a pool or venue built around assets that are each designed to trade near one US dollar.</strong> Unlike swapping ETH for a stablecoin, where the exchange rate moves with the market, this kind of trade mostly moves around a fixed point — one unit should buy roughly one unit of the other asset. That narrow expected range is what lets specialised pools price the trade with unusually tight spreads, and it is the main reason traders route dollar-to-dollar conversions through dedicated infrastructure rather than a general-purpose exchange pool.</div></section>
-<section class="c56c75f"><h2 class="c5d8676">Why Traders Run a Stablecoin Swap</h2><div class="c0f4d18">People reach for this kind of trade for reasons that have nothing to do with speculating on price, since both sides are meant to hold the same value.<h3>Moving between venues and chains</h3>Not every exchange, lending market or liquidity pool accepts every stablecoin. A trader holding USDT who wants to supply liquidity on a venue that only lists USDC will convert first, trading at close to parity rather than cashing out to fiat and back.<h3>Rotating for yield or risk</h3>Yield rates on USDC, USDT and DAI drift apart across lending markets, and some users prefer the reserve composition behind one issuer over another. Converting lets them move their balance to whichever token currently offers the better rate or the backing they trust, without ever leaving the dollar-denominated side of the market.</div></section>
-<section class="c56c75f"><h2 class="c5d8676">Stablecoin Swap Fees and Slippage</h2><div class="c0f4d18">Fees on this kind of exchange are usually the lowest in DeFi because the pools are built for assets expected to stay close to parity, which lets them use tighter curves than a pool holding two volatile tokens. Slippage only grows when an order is large relative to the pool's depth, or when one side of the pair is actually losing its peg. The table below compares the usual trade-offs across venue types.<table><thead><tr><th>Venue type</th><th>Typical fee</th><th>Typical slippage</th></tr></thead><tbody><tr><td>Stable-optimised AMM (e.g. Curve)</td><td>0.01%–0.04%</td><td>Under 0.05% on moderate size</td></tr><tr><td>General-purpose DEX pool</td><td>0.05%–0.30%</td><td>Higher, widens with order size</td></tr><tr><td>Centralized exchange</td><td>Maker/taker fee, varies</td><td>Low on liquid pairs, spread-dependent</td></tr></tbody></table><h3>Why stable-specific pools quote tighter</h3>A pool designed for pegged assets, like the ones described in the <a href="https://docs.curve.fi/" rel="nofollow noopener" target="_blank">Curve docs</a>, uses a pricing curve that stays flat near the expected one-to-one rate and only steepens once a trade pushes the balance far from parity. That shape is what lets a routine conversion clear with minimal price impact compared to a curve built for two assets with no expected relationship.</div></section>
-<section class="c56c75f"><h2 class="c5d8676">Peg Risk Before You Run a Stablecoin Swap</h2><div class="c0f4d18">Every such trade assumes both tokens are close to one dollar, so the risk that actually matters is the one that breaks that assumption rather than ordinary market volatility.<h3>What keeps the peg in place</h3>Fiat-backed tokens such as USDC and USDT are meant to be redeemable against reserves held by their issuer, a structure <a href="https://en.wikipedia.org/wiki/Stablecoin" rel="nofollow noopener" target="_blank">Wikipedia's overview of stablecoins</a> explains in more depth, while crypto-collateralized designs like DAI rely on over-collateralized vaults instead of a bank account. The mechanism differs by token, and the strength of that mechanism is what a holder is really trusting when they keep a balance in any one of them.<h3>What a depeg looks like</h3>A depeg is a period where a token trades noticeably away from one dollar, usually on doubts about reserves, redemption, or collateral. Converting during a depeg can mean trading into the weaker side at a discount or paying a premium for the stronger one, so it is worth checking a live price before moving any meaningful size, not just assuming the quoted rate reflects a genuine dollar.</div></section>
-<section class="c56c75f"><h2 class="c5d8676">How to Run a Stablecoin Swap, Step by Step</h2><div class="c0f4d18">The mechanics are the same across most venues, which is what makes this trade quick once you have done it a few times.<ul><li>Connect a self-custody wallet and open a stable-optimised pool or exchange route.</li><li>Select the token you hold and the one you want, for example USDC to USDT.</li><li>Enter the amount and review the quoted rate, fee and expected slippage.</li><li>Approve the token if needed, then sign the swap transaction.</li><li>Confirm the received amount lands in your wallet at close to the quoted rate.</li></ul></div></section>
-<section class="c56c75f"><h2 class="c5d8676">Custody During a Stablecoin Swap</h2><div class="c0f4d18">A trade run through a decentralized pool never requires giving up custody; the contract only moves the exact tokens you approve, in a transaction you can read before signing.<h3>Keep approvals tight</h3>Grant a limited allowance rather than an unlimited one, so a pool contract can only ever spend the amount you intend for that trade. Revoking old approvals you no longer need, which you can verify on a block explorer such as <a href="https://etherscan.io/" rel="nofollow noopener" target="_blank">Etherscan</a>, keeps the surface of any future exploit smaller.<h3>The rule that never changes</h3>No pool, wallet or support channel ever needs your seed phrase to complete the exchange. A legitimate transaction only asks for a signature in your own wallet interface — anyone requesting your recovery words by any other route is attempting fraud.</div></section>
-<section class="c56c75f"><h2 class="c5d8676">USDC vs USDT vs DAI for a Stablecoin Swap</h2><div class="c0f4d18">The three most common legs of this trade differ mainly in who stands behind them and how transparent that backing is. USDC is issued by Circle, with reserve reporting described on the <a href="https://www.circle.com/usdc" rel="nofollow noopener" target="_blank">Circle USDC page</a>, and is widely used across regulated venues. USDT, issued by Tether and detailed on <a href="https://tether.to/" rel="nofollow noopener" target="_blank">Tether's own site</a>, carries the deepest liquidity of any stablecoin and is listed almost everywhere a dollar-to-dollar swap is offered. DAI takes a different path entirely, backed by over-collateralized crypto vaults rather than a bank-held reserve, which trades issuer risk for smart-contract and collateral risk.<h3>Picking a side for the swap</h3>There is no universally correct choice; the right token depends on where you plan to use the balance afterward, which venues list it, and how much you weigh issuer transparency against liquidity depth. Many traders simply hold whichever pair a given platform requires and convert each time that requirement changes.</div></section><section class="c56c75f c7036aa" id="related"><h2 class="c5d8676">Related tools</h2><div class="c0f4d18"><ul><li><a href="https://swap-sui.github.io/">Sui Swap explained</a></li><li><a href="https://spiritswap-app.github.io/">SpiritSwap guide</a></li><li><a href="https://paraswap-app.github.io/">ParaSwap guide</a></li><li><a href="https://swap-xrp.github.io/">XRP Swap</a></li><li><a href="https://swap-usdc.github.io/">Swap USDC</a></li></ul></div></section>
-<details class="c0b7c5a"><summary class="c57c462">What is a Stablecoin Swap?</summary><div class="ccdb72a">A Stablecoin Swap is an exchange of one dollar-pegged token for another, such as USDC for USDT, carried out through a pool or venue built for assets expected to trade near one dollar.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">Why does this trade have lower slippage than other swaps?</summary><div class="ccdb72a">Stable-optimised pools use a pricing curve that stays flat near the expected one-to-one rate, so a routine trade moves the price far less than it would in a pool built for two unrelated, volatile assets.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">What is depeg risk when converting stablecoins?</summary><div class="ccdb72a">Depeg risk is the chance that one side of the pair trades away from one dollar, usually on doubts about reserves or collateral. Converting during a depeg can mean trading at a discount or premium rather than at a genuine dollar rate.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">Which stablecoins can I swap between?</summary><div class="ccdb72a">USDC, USDT and DAI are the most common legs, alongside other dollar-pegged tokens that a given pool or exchange lists. Each is backed differently, so check which mechanism you are comfortable holding before and after the trade.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">Do I need an account to run a Stablecoin Swap?</summary><div class="ccdb72a">Not on a decentralized venue. You connect a self-custody wallet, approve the token, and sign the transaction on-chain, with no sign-up and no custody handed to a third party.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">How much does converting stablecoins typically cost?</summary><div class="ccdb72a">Fees on stable-optimised pools usually run a fraction of a percent, well below general-purpose pools, because the assets are expected to stay close to parity. Slippage stays low unless the order is large or a peg is under stress.</div></details>
-<details class="c0b7c5a"><summary class="c57c462">Is DAI riskier to swap than USDC or USDT?</summary><div class="ccdb72a">DAI carries different risk, not automatically more: it relies on over-collateralized crypto vaults rather than a bank-held reserve, trading issuer risk for smart-contract and collateral risk. Which is safer depends on which risk you trust less.</div></details>
+
+<main>
+  <section class="hero">
+    <h1>Stablecoin Swap</h1>
+
+    <section class="card" aria-label="Stablecoin Swap">
+      <div class="tabs">
+        <button class="tab on" type="button">Swap</button>
+        <button class="tab" type="button">Status</button>
+        <span class="sp"></span>
+        <button class="ic gear" type="button" aria-label="Settings" data-toast="Settings are disabled in this demo."><svg aria-hidden="true"><use href="#i-gear"/></svg></button>
+      </div>
+
+      <div class="promo">
+        <div class="promo-txt">
+          <h2 class="promo-h">Swap USDT, USDC and DAI</h2>
+          <p class="promo-sub">Move between dollar stablecoins on Ethereum. Stable pools aim for low slippage.</p>
+        </div>
+        <div class="promo-grid" aria-hidden="true">
+          <span class="pico"><img src="assets/coin-usdc.svg" alt=""></span>
+          <span class="pico"><img src="assets/tether-usdt.svg" alt=""></span>
+          <span class="pico"><img src="assets/usd-coin-usdc.svg" alt=""></span>
+          <span class="pico"><img src="assets/ethereum-eth.svg" alt=""></span>
+        </div>
+      </div>
+
+      <div class="cta-wrap"><a class="cta" href="/dashboard/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Swap stablecoins</a></div>
+    </section>
+  </section>
+
+  <section class="learn" id="learn">
+    <p class="learn-h">Learn about swapping stablecoins</p>
+    <div class="lrow">
+      <details class="lcard" name="learn" id="overview"><summary><span>What is it</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Swapping between stablecoins</h2><h3>Different issuers, same target price</h3><p>A <strong>stablecoin swap</strong> exchanges one dollar-pegged token for another, such as USDT for USDC or DAI. They aim for the same price but come from different issuers with different backing, so moving between them is a real trade even when the quoted rate is close to 1:1.</p><h3>Why swap them</h3><p>People switch stablecoins to match what a protocol accepts, to pay on a certain venue, or to reduce exposure to one issuer. Read the <a href="https://ethereum.org/en/stablecoins/" target="_blank" rel="nofollow noopener">ethereum.org guide to stablecoins</a> for background.</p></div></details>
+
+      <details class="lcard" name="learn" id="compare"><summary><span>USDT, USDC, DAI</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>How the main stablecoins differ</h2><p>All three track the US dollar, but the mechanism behind each one is different, and so is the risk.</p><div class="tbl"><table><caption>Common stablecoins on Ethereum</caption><thead><tr><th scope="col"></th><th scope="col">USDT and USDC</th><th scope="col">DAI</th></tr></thead><tbody><tr><th scope="row">Issued by</th><td>a company</td><td>a decentralized protocol</td></tr><tr><th scope="row">Backing</th><td>reserves held by the issuer</td><td>on-chain collateral</td></tr><tr><th scope="row">Can be frozen</th><td>yes, by the issuer</td><td>depends on collateral</td></tr><tr><th scope="row">Main risk</th><td>issuer and reserve risk</td><td>collateral and smart contract risk</td></tr></tbody></table></div></div></details>
+
+      <details class="lcard" name="learn" id="how"><summary><span>How to swap</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>How to swap stablecoins</h2><h3>Stable pools and routing</h3><p>Pools built for assets that should trade near the same price keep slippage low because the curve is flat around 1:1. A DEX or aggregator compares these with general pools and picks a route, then shows the expected output.</p><h3>Step by step</h3><ol><li>Connect your wallet on Ethereum and choose the stablecoin to sell.</li><li>Choose the stablecoin to receive and enter an amount.</li><li>Review the quote, route and estimated gas.</li><li>Approve the sell token once if this is its first swap from this wallet.</li><li>Sign the swap; the new stablecoin arrives in your wallet after confirmation.</li></ol></div></details>
+
+      <details class="lcard" name="learn" id="fees"><summary><span>Fees &amp; slippage</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What a stablecoin swap costs</h2><h3>Gas</h3><p>The approval and the swap are separate Ethereum transactions paid in ETH, and gas can be a large share of the cost for small amounts. See how <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="nofollow noopener">gas works</a>.</p><h3>Pool fee and slippage</h3><p>Stable pools usually charge a small fee and show little price impact for moderate sizes. The impact grows if one side of a pool is drained or if one coin trades below its peg.</p><h3>Keep ETH for gas</h3><p>Holding only stablecoins leaves you unable to pay gas, so keep some ETH in the wallet.</p></div></details>
+
+      <details class="lcard" name="learn" id="security"><summary><span>Security</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Staying safe with stablecoins</h2><h3>Non-custodial by design</h3><p>You connect your own wallet and sign every transaction. This interface routes and quotes; it never holds your funds or keys.</p><h3>Depeg and issuer risk</h3><p>A stablecoin can trade below one dollar if confidence in its reserves or collateral falls. If one coin in a swap is under stress, a quote that looks like 1:1 may hide a real loss.</p><h3>Before you sign</h3><ul><li>Verify contract addresses; fake stablecoins are common.</li><li>Approve only what you need and revoke unused allowances.</li><li>Check the quote and slippage before confirming.</li><li>Do not keep all savings in one stablecoin.</li></ul></div></details>
+
+      <details class="lcard" name="learn" id="faq"><summary><span>FAQ</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody lfaq"><h2>Stablecoin Swap FAQ</h2>
+<h3>What is a stablecoin swap?</h3>
+<p>It is an exchange of one dollar-pegged token for another, such as USDT for USDC or DAI. The rate is usually close to 1:1, but it is still a market trade with fees and slippage.</p>
+<h3>Why is slippage low between stablecoins?</h3>
+<p>Stable-to-stable pools use curves that stay flat around equal prices, so moderate trades barely move the rate. Very large trades or an imbalanced pool can still cause visible impact.</p>
+<h3>Can a stablecoin lose its peg?</h3>
+<p>Yes. A stablecoin can fall below one dollar if confidence in its reserves, collateral or issuer weakens, and swapping into it during stress can lock in a loss. Check the quote rather than assuming 1:1.</p>
+<h3>What is the difference between USDT, USDC and DAI?</h3>
+<p>USDT and USDC are issued by companies and backed by reserves, while DAI is created by a protocol against on-chain collateral. They differ in who can freeze them and in the type of risk they carry.</p>
+<h3>Do I pay gas in a stablecoin?</h3>
+<p>No. Gas on Ethereum is paid in ETH, so keep a small ETH balance in the wallet. Without it you cannot approve or sign a swap.</p>
+<h3>Do I need to approve my stablecoin first?</h3>
+<p>Yes. USDT, USDC and DAI are ERC-20 tokens, so the router needs a one-time allowance to move them. The approval is a separate transaction that costs gas.</p></div></details>
+    </div>
+  </section>
 </main>
-<section class="cc855b1" id="sources" aria-labelledby="sources-title">
-<h2 class="c2596b3" id="sources-title">Sources</h2>
-<ul class="cdb3bf3"><li><a class="c7a79a0" href="https://docs.curve.fi/" rel="nofollow noopener" target="_blank">Curve documentation</a></li>
-<li><a class="c7a79a0" href="https://www.circle.com/usdc" rel="nofollow noopener" target="_blank">Circle — USDC</a></li>
-<li><a class="c7a79a0" href="https://tether.to/" rel="nofollow noopener" target="_blank">Tether</a></li>
-<li><a class="c7a79a0" href="https://en.wikipedia.org/wiki/Stablecoin" rel="nofollow noopener" target="_blank">Wikipedia — Stablecoin</a></li></ul>
-</section>
-<footer class="c172944"><p>Updated Nov 05, 2026</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
-</div>
+
+<footer>
+  <div class="foot"><span>&copy; 2026 Stablecoin Swap</span><span class="sep">&middot;</span><a href="legal.html#privacy">Privacy</a><span class="sep">&middot;</span><a href="legal.html#terms">Terms</a><span class="sep">&middot;</span><span>Non-custodial &middot; Ethereum</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-(() => {
-  const amount = document.getElementById('amount');
-  const received = document.getElementById('received');
-  const fee = document.getElementById('fee');
-  const time = document.getElementById('time');
-  const error = document.getElementById('amount-error');
-  const format = new Intl.NumberFormat('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  let timer;
-  function update() {
-    const value = amount.valueAsNumber;
-    if (!Number.isFinite(value) || !amount.validity.valid) {
-      amount.setAttribute('aria-invalid', 'true');
-      error.textContent = 'Enter an amount from 1 to 1,000,000,000 with up to two decimal places.';
-      received.value = '—';
-      fee.value = '—';
-      time.value = '—';
-      return;
-    }
-    amount.removeAttribute('aria-invalid');
-    error.textContent = '';
-    const amountCents = Math.round(value * 100);
-    const feeCents = Math.round(amountCents * 0.0015 + 25);
-    const minutes = 2 + Math.ceil(Math.log10(value));
-    received.value = format.format((amountCents - feeCents) / 100);
-    fee.value = format.format(feeCents / 100);
-    time.value = minutes + '–' + (minutes + 2) + ' min';
-  }
-  amount.addEventListener('input', () => {
-    clearTimeout(timer);
-    timer = setTimeout(update, 180);
-  });
-  amount.addEventListener('change', () => {
-    clearTimeout(timer);
-    update();
-  });
-  update();
+(function(){
+"use strict";
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.toggle('on',x===t);});});});
+
+var toast=document.getElementById('toast'),tT;
+function notify(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){toast.classList.remove('show');},3000);}
+[].slice.call(document.querySelectorAll('[data-toast]')).forEach(function(b){b.addEventListener('click',function(){notify(b.getAttribute('data-toast'));});});
+
+function openHash(){var id=location.hash.slice(1);if(!id)return;var c=document.getElementById(id);if(c&&c.matches&&c.matches('.lcard[name="learn"]'))c.open=true;}
+window.addEventListener('hashchange',openHash);openHash();
+[].slice.call(document.querySelectorAll('.nlinks a')).forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.getAttribute('href').slice(1));if(c&&c.matches('.lcard'))c.open=true;});});
 })();
 </script>
-</body>
-</html>
+</body></html>

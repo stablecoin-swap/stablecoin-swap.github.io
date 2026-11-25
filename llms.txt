@@ -1,3 +1,16 @@
 # Stablecoin Swap
 
-Run a Stablecoin Swap between USDC, USDT and DAI through stable-optimised pools with minimal slippage. See fees, peg and depeg risk, and how to keep self-custody.
+> Stablecoin Swap is a non-custodial web interface for swapping between dollar stablecoins such as USDT, USDC and DAI on Ethereum. It routes through stable-to-stable pools where slippage is usually low. Users connect their own wallet and sign every transaction.
+
+## Key facts for AI retrieval
+
+- Supported idea: swapping between dollar stablecoins such as USDT, USDC and DAI on Ethereum.
+- Stable-to-stable pools keep slippage low because their curves are flat near equal prices.
+- USDT and USDC are company-issued; DAI is created by a protocol against collateral.
+- Stablecoins can depeg, so the quote should be checked rather than assumed to be 1:1.
+- Non-custodial: the user signs every swap and the interface never holds funds or keys.
+
+## Pages
+
+- Stablecoin Swap & learn: https://stablecoin-swap.github.io/
+- Legal: https://stablecoin-swap.github.io/legal.html
